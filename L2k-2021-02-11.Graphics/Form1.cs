@@ -66,7 +66,9 @@ namespace L2k_2021_02_11.Graphics
             if (pressed)
             {
                 System.Drawing.Graphics g = mainPanel.CreateGraphics();
-                Pen p = new Pen(c, 2);
+                Pen p = new Pen(c, 25);
+                p.StartCap = p.EndCap = LineCap.Round;
+                g.SmoothingMode = SmoothingMode.HighQuality;
                 g.DrawLine(p, lastPos, e.Location);
                 lastPos = e.Location;
             }
